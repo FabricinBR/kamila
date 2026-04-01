@@ -45,6 +45,19 @@ body {
   display: block;
 }
 
+.mensagem-casal {
+  margin: 0 auto 2rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 1.2rem;
+  line-height: 1.7;
+}
+
+.mensagem-casal p + p {
+  margin-top: 0.8rem;
+}
+
 .lista-presentes h2 {
   margin-bottom: 1rem;
 }
@@ -72,6 +85,14 @@ body {
 .produto.selecionado {
   border-color: var(--rosa);
   background: var(--rosa-claro);
+}
+
+.produto img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
 }
 
 .produto h3 {
