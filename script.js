@@ -5,30 +5,21 @@ const modal = document.getElementById('modal-pix');
 const fecharModal = document.getElementById('fechar-modal');
 const resumoDoacao = document.getElementById('resumo-doacao');
 
-
-const categoriaImagem = {
-  'Jogo de Panelas': 'cookware kitchen',
-  'Air Fryer': 'air fryer kitchen appliance',
-  'Geladeira': 'refrigerator kitchen',
-  'Micro-ondas': 'microwave oven kitchen',
-  'Máquina de Lavar': 'washing machine laundry',
-  'Cafeteira': 'coffee maker kitchen',
-  'Aparelho de Jantar': 'dinnerware table set',
-  'Conjunto de Cama': 'bed linens bedroom',
-  'Conjunto de Toalhas': 'bath towels',
-  'Smart TV': 'smart tv living room',
-  'Jantar Romântico': 'romantic dinner table',
-  'Noite de Hotel': 'hotel room'
-};
+const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
 
 cards.forEach((card) => {
   const imagem = card.querySelector('img');
-  const nomeProduto = card.dataset.produto || '';
-  const busca = categoriaImagem[nomeProduto] || nomeProduto;
 
-  if (imagem && busca) {
-    imagem.src = `https://source.unsplash.com/800x600/?${encodeURIComponent(busca)}`;
-  }
+  if (!imagem) return;
+
+  imagem.loading = 'lazy';
+
+  imagem.addEventListener('error', () => {
+    if (imagem.dataset.fallbackAplicado === 'true') return;
+
+    imagem.dataset.fallbackAplicado = 'true';
+    imagem.src = imagemFallback;
+  });
 });
 
 let presenteSelecionado = '';
@@ -71,7 +62,6 @@ modal.addEventListener('click', (event) => {
     modal.setAttribute('aria-hidden', 'true');
   }
 });
-
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && modal.classList.contains('ativo')) {
