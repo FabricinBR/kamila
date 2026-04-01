@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Presentes - Casamento</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <h1>Casamento Ana & Lucas</h1>
+      <p>Escolha um presente especial para celebrar esse momento com a gente 💍</p>
+    </header>
+
+    <main class="container">
+      <section class="banner" aria-label="Banner do casamento">
+        <img
+          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=80"
+          alt="Noivos em celebração de casamento"
+        />
+      </section>
+
+      <section class="lista-presentes">
+        <h2>Escolha seu presente</h2>
+
+        <div class="produtos" id="produtos">
+          <article class="produto" data-produto="Jogo de Panelas" data-valor="450,00">
+            <h3>Jogo de Panelas</h3>
+            <p>Presente para a nova cozinha do casal.</p>
+            <strong>R$ 450,00</strong>
+          </article>
+
+          <article class="produto" data-produto="Air Fryer" data-valor="520,00">
+            <h3>Air Fryer</h3>
+            <p>Para receitas práticas no dia a dia.</p>
+            <strong>R$ 520,00</strong>
+          </article>
+
+          <article class="produto" data-produto="Cafeteira" data-valor="380,00">
+            <h3>Cafeteira</h3>
+            <p>Para começar todas as manhãs com café fresco.</p>
+            <strong>R$ 380,00</strong>
+          </article>
+
+          <article class="produto" data-produto="Jantar Romântico" data-valor="300,00">
+            <h3>Jantar Romântico</h3>
+            <p>Ajude o casal a viver uma noite especial.</p>
+            <strong>R$ 300,00</strong>
+          </article>
+
+          <article class="produto" data-produto="Noite de Hotel" data-valor="700,00">
+            <h3>Noite de Hotel</h3>
+            <p>Contribuição para a lua de mel.</p>
+            <strong>R$ 700,00</strong>
+          </article>
+
+          <article class="produto" data-produto="Conjunto de Toalhas" data-valor="220,00">
+            <h3>Conjunto de Toalhas</h3>
+            <p>Itens de casa para o novo lar.</p>
+            <strong>R$ 220,00</strong>
+          </article>
+        </div>
+
+        <form id="form-presente" class="formulario">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required />
+
+          <label for="presente">Presente escolhido</label>
+          <input id="presente" name="presente" type="text" placeholder="Clique em um presente acima" readonly required />
+
+          <button type="submit">Confirmar presente</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal" id="modal-pix" aria-hidden="true" role="dialog" aria-labelledby="titulo-modal">
+      <div class="modal-conteudo">
+        <button class="fechar" id="fechar-modal" aria-label="Fechar">×</button>
+        <h3 id="titulo-modal">Pagamento via PIX</h3>
+        <p id="resumo-doacao"></p>
+        <div class="pix-box">
+          <span>Chave PIX:</span>
+          <code id="chave-pix">casamento.analeucas@pix.com</code>
+        </div>
+        <p class="ajuda">Após o pagamento, envie o comprovante para os noivos.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
