@@ -45,6 +45,7 @@ body {
   display: block;
 }
 
+
 .mensagem-casal {
   margin: 0 auto 2rem;
   background: #fff;
@@ -86,6 +87,7 @@ body {
   border-color: var(--rosa);
   background: var(--rosa-claro);
 }
+
 
 .produto img {
   width: 100%;
