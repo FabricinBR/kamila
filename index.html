@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Presentes - Casamento</title>
     <link rel="stylesheet" href="styles.css" />
- </head>
+  </head>
   <body>
     <header class="topo">
-      <h1>Casamento Val & Roni Aloisio</h1>
+      <h1>Casamento Val &amp; Roni Aloisio</h1>
       <p>Escolha um presente especial para celebrar esse momento com a gente 💍</p>
     </header>
 
@@ -35,6 +35,12 @@
 
       <section class="lista-presentes">
         <h2>Escolha seu presente</h2>
+
+        <div class="abas" role="tablist" aria-label="Categorias de presentes">
+          <button class="aba ativa" type="button" role="tab" aria-selected="true" data-categoria="Eletroportáteis">Eletroportáteis</button>
+          <button class="aba" type="button" role="tab" aria-selected="false" data-categoria="Cozinha e mesa">Cozinha e mesa</button>
+          <button class="aba" type="button" role="tab" aria-selected="false" data-categoria="Cama e banho">Cama e banho</button>
+        </div>
 
         <div class="produtos" id="produtos">
           <article class="produto" data-produto="Jogo de Panelas" data-valor="450,00">
