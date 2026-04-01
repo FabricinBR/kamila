@@ -45,3 +45,11 @@ modal.addEventListener('click', (event) => {
     modal.setAttribute('aria-hidden', 'true');
   }
 });
+
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modal.classList.contains('ativo')) {
+    modal.classList.remove('ativo');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+});
