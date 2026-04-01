@@ -46,7 +46,6 @@ const catalogo = {
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
-
 const cardImage = (nome) => `https://placehold.co/800x600/fdf1f6/c74b75?text=${encodeURIComponent(nome)}`;
 
 let presenteSelecionado = '';
