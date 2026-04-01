@@ -40,9 +40,11 @@ body {
 
 .banner img {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
   display: block;
+  background: #fff;
 }
 
 
@@ -61,6 +63,28 @@ body {
 
 .lista-presentes h2 {
   margin-bottom: 1rem;
+}
+
+
+.abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.aba {
+  border: 1px solid var(--borda);
+  background: #fff;
+  color: var(--texto);
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.aba.ativa {
+  background: var(--rosa);
+  color: #fff;
 }
 
 .produtos {
