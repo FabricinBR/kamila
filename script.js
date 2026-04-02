@@ -52,6 +52,16 @@ let presenteSelecionado = '';
 let valorSelecionado = '';
 let categoriaAtual = 'Eletroportáteis';
 
+function fecharModalPix() {
+  modal.classList.remove('ativo');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function abrirModalPix() {
+  modal.classList.add('ativo');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
 function montarCards() {
   produtosContainer.innerHTML = '';
 
@@ -116,26 +126,20 @@ form.addEventListener('submit', (event) => {
   }
 
   resumoDoacao.textContent = `${nome}, obrigado por presentear com ${presenteSelecionado} no valor de ${valorSelecionado}`;
-  modal.classList.add('ativo');
-  modal.setAttribute('aria-hidden', 'false');
+  abrirModalPix();
 });
 
-fecharModal.addEventListener('click', () => {
-  modal.classList.remove('ativo');
-  modal.setAttribute('aria-hidden', 'true');
-});
+fecharModal.addEventListener('click', fecharModalPix);
 
 modal.addEventListener('click', (event) => {
   if (event.target === modal) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && modal.classList.contains('ativo')) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
