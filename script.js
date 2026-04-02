@@ -44,6 +44,16 @@ const catalogo = {
     ['Toalha de Banho Home Style by Buddemeyer Aria', 'R$ 99,99.'],
     ['Jogo de Cama Queen 4 peças 200 fios Organique', 'R$ 351,90.'],
     ['Edredom Queen Nobre 1 peça dupla face', 'R$ 329,48.']
+  ],
+  'Lua de mel': [
+    ['✈️ Passagens aéreas', 'R$ 300 a R$ 1.500 (cotas).'],
+    ['🏨 Hospedagem (diárias)', 'R$ 250 a R$ 800.'],
+    ['🚖 Transfer aeroporto/hotel', 'R$ 200 a R$ 400.'],
+    ['💳 Ajuda geral para viagem', 'R$ 200 a R$ 1.000.'],
+    ['🍷 Jantar romântico especial', 'R$ 200 a R$ 500.'],
+    ['🍾 Noite com vinho/champagne', 'R$ 200 a R$ 400.'],
+    ['🌅 Jantar à beira-mar', 'R$ 300 a R$ 600.'],
+    ['🍳 Café da manhã especial no hotel', 'R$ 200 a R$ 350.']
   ]
 };
 
