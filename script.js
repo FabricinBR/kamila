@@ -62,10 +62,14 @@ function renderizarContabilizador() {
   listaEscolhidos.innerHTML = '';
 
   Object.entries(presentesConfirmados)
-    .sort(([, qtdA], [, qtdB]) => qtdB - qtdA)
-    .forEach(([nome, quantidade]) => {
+    .sort(([, infoA], [, infoB]) => infoB.quantidade - infoA.quantidade)
+    .forEach(([nomePresente, info]) => {
+      const detalhes = info.confirmacoes
+        .map(({ nomeConvidado, valor }) => `${nomeConvidado} (${valor})`)
+        .join(' • ');
+
       const item = document.createElement('li');
-      item.textContent = `${nome} — ${quantidade} escolha${quantidade > 1 ? 's' : ''}`;
+      item.textContent = `${nomePresente} — ${info.quantidade} escolha${info.quantidade > 1 ? 's' : ''} | Confirmado por: ${detalhes}`;
       listaEscolhidos.appendChild(item);
     });
 }
@@ -146,7 +150,19 @@ form.addEventListener('submit', (event) => {
   resumoDoacao.textContent = `${nome}, obrigado por presentear com ${presenteSelecionado} no valor de ${valorSelecionado}`;
   abrirModalPix();
 
-  presentesConfirmados[presenteSelecionado] = (presentesConfirmados[presenteSelecionado] || 0) + 1;
+  if (!presentesConfirmados[presenteSelecionado]) {
+    presentesConfirmados[presenteSelecionado] = {
+      quantidade: 0,
+      confirmacoes: []
+    };
+  }
+
+  presentesConfirmados[presenteSelecionado].quantidade += 1;
+  presentesConfirmados[presenteSelecionado].confirmacoes.push({
+    nomeConvidado: nome,
+    valor: valorSelecionado
+  });
+
   totalEscolhas += 1;
   renderizarContabilizador();
 });
