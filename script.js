@@ -16,20 +16,16 @@ const catalogo = {
     ['Cafeteira Elétrica Mondial Dolce Arome Thermo C-33JT-24X', 'R$ 260,39 no Pix.'],
     ['Grill e Sanduicheira Mondial Premium S-07', 'R$ 120,81 no Pix.'],
     ['Batedeira Prática Mondial B-44-B 400W', 'R$ 264,74.'],
-    ['Espremedor de Frutas Mondial Turbo Citrus E-01', 'R$ 62,90 no Pix.'],
     ['Pipoqueira Elétrica Mondial Popflix PP-04', 'R$ 244,90.'],
     ['Ferro a Vapor Mondial FVN-01-BL', 'R$ 116,91 no Pix.'],
     ['Panela de Pressão Elétrica Digital Mondial', 'R$ 379,05 no Pix.']
   ],
   'Cozinha e mesa': [
-    ['Faqueiro Tramontina Búzios 24 peças', 'R$ 62,99.'],
-    ['Faqueiro Tramontina Malibu 24 peças', 'R$ 62,92.'],
     ['Jogo de Panelas Tramontina Fundo Triplo 3 peças', 'R$ 323,10.'],
     ['Jogo de Panelas Tramontina Solar 6 peças', 'R$ 709,00.'],
     ['Jogo de Panelas Tramontina Allegra 5 peças', 'R$ 409,82.'],
     ['Kit Utensílios de Silicone Wincy 8 peças', 'R$ 169,90.'],
     ['Kit 10 Utensílios de Silicone para cozinha', 'R$ 127,00.'],
-    ['Taça de Gin Bohemia Gastro', 'R$ 39,99.'],
     ['Decanter Bohemia Fórum', 'R$ 159,99.'],
     ['Aparelho de Jantar Oxford Ryo Maresia 20 peças', 'a partir de R$ 309,00.']
   ],
@@ -39,17 +35,25 @@ const catalogo = {
     ['Travesseiro Buddemeyer Toque de Pluma 50x70 cm', 'R$ 119,90.'],
     ['Kit Edredom Jogo de Cama Dupla Face 6 peças Queen', 'R$ 218,49.'],
     ['Jogo de Toalhas Buddemeyer Fio Penteado Canelado Gigante 5 peças', 'R$ 399,90.'],
-    ['Kit 2 Travesseiros Select Luxo Fibras Importada e Antialérgica', 'R$ 76,64.'],
     ['Jogo de Toalhas Buddemeyer Florentina Extra Soft 5 peças', 'R$ 159,90.'],
-    ['Toalha de Banho Home Style by Buddemeyer Aria', 'R$ 99,99.'],
     ['Jogo de Cama Queen 4 peças 200 fios Organique', 'R$ 351,90.'],
     ['Edredom Queen Nobre 1 peça dupla face', 'R$ 329,48.']
+  ],
+  'Lua de mel': [
+    ['✈️ Passagens aéreas', 'R$ 300 a R$ 1.500 (cotas).'],
+    ['🏨 Hospedagem (diárias)', 'R$ 250 a R$ 800.'],
+    ['🚖 Transfer aeroporto/hotel', 'R$ 200 a R$ 400.'],
+    ['💳 Ajuda geral para viagem', 'R$ 200 a R$ 1.000.'],
+    ['🍷 Jantar romântico especial', 'R$ 200 a R$ 500.'],
+    ['🍾 Noite com vinho/champagne', 'R$ 200 a R$ 400.'],
+    ['🌅 Jantar à beira-mar', 'R$ 300 a R$ 600.'],
+    ['🍳 Café da manhã especial no hotel', 'R$ 200 a R$ 350.']
   ]
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
 const cardImage = (nome) =>
-  `https://source.unsplash.com/800x600/?${encodeURIComponent(`${nome},casa,cozinha,decoração`)}`;
+  `https://picsum.photos/seed/${encodeURIComponent(nome)}/800/600`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
