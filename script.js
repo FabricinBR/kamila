@@ -5,6 +5,8 @@ const fecharModal = document.getElementById('fechar-modal');
 const resumoDoacao = document.getElementById('resumo-doacao');
 const produtosContainer = document.getElementById('produtos');
 const abas = document.querySelectorAll('.aba');
+const contadorTotal = document.getElementById('contador-total');
+const listaEscolhidos = document.getElementById('lista-escolhidos');
 
 const catalogo = {
   'Eletroportáteis': [
@@ -52,6 +54,21 @@ const cardImage = (nome) =>
 let presenteSelecionado = '';
 let valorSelecionado = '';
 let categoriaAtual = 'Eletroportáteis';
+const presentesConfirmados = {};
+let totalEscolhas = 0;
+
+function renderizarContabilizador() {
+  contadorTotal.textContent = `Total de escolhas: ${totalEscolhas}`;
+  listaEscolhidos.innerHTML = '';
+
+  Object.entries(presentesConfirmados)
+    .sort(([, qtdA], [, qtdB]) => qtdB - qtdA)
+    .forEach(([nome, quantidade]) => {
+      const item = document.createElement('li');
+      item.textContent = `${nome} — ${quantidade} escolha${quantidade > 1 ? 's' : ''}`;
+      listaEscolhidos.appendChild(item);
+    });
+}
 
 function fecharModalPix() {
   modal.classList.remove('ativo');
@@ -128,6 +145,10 @@ form.addEventListener('submit', (event) => {
 
   resumoDoacao.textContent = `${nome}, obrigado por presentear com ${presenteSelecionado} no valor de ${valorSelecionado}`;
   abrirModalPix();
+
+  presentesConfirmados[presenteSelecionado] = (presentesConfirmados[presenteSelecionado] || 0) + 1;
+  totalEscolhas += 1;
+  renderizarContabilizador();
 });
 
 fecharModal.addEventListener('click', fecharModalPix);
@@ -145,3 +166,4 @@ document.addEventListener('keydown', (event) => {
 });
 
 montarCards();
+renderizarContabilizador();
