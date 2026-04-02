@@ -47,7 +47,6 @@ body {
   background: #fff;
 }
 
-
 .mensagem-casal {
   margin: 0 auto 2rem;
   background: #fff;
@@ -64,7 +63,6 @@ body {
 .lista-presentes h2 {
   margin-bottom: 1rem;
 }
-
 
 .abas {
   display: flex;
@@ -111,7 +109,6 @@ body {
   border-color: var(--rosa);
   background: var(--rosa-claro);
 }
-
 
 .produto img {
   width: 100%;
