@@ -46,11 +46,22 @@ const catalogo = {
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
-const cardImage = (nome) => `https://placehold.co/800x600/fdf1f6/c74b75?text=${encodeURIComponent(nome)}`;
+const cardImage = (nome) =>
+  `https://source.unsplash.com/800x600/?${encodeURIComponent(`${nome},casa,cozinha,decoração`)}`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
 let categoriaAtual = 'Eletroportáteis';
+
+function fecharModalPix() {
+  modal.classList.remove('ativo');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function abrirModalPix() {
+  modal.classList.add('ativo');
+  modal.setAttribute('aria-hidden', 'false');
+}
 
 function montarCards() {
   produtosContainer.innerHTML = '';
@@ -116,26 +127,20 @@ form.addEventListener('submit', (event) => {
   }
 
   resumoDoacao.textContent = `${nome}, obrigado por presentear com ${presenteSelecionado} no valor de ${valorSelecionado}`;
-  modal.classList.add('ativo');
-  modal.setAttribute('aria-hidden', 'false');
+  abrirModalPix();
 });
 
-fecharModal.addEventListener('click', () => {
-  modal.classList.remove('ativo');
-  modal.setAttribute('aria-hidden', 'true');
-});
+fecharModal.addEventListener('click', fecharModalPix);
 
 modal.addEventListener('click', (event) => {
   if (event.target === modal) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && modal.classList.contains('ativo')) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
