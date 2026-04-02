@@ -59,7 +59,7 @@ const catalogo = {
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
 const cardImage = (nome) =>
-  `https://source.unsplash.com/800x600/?${encodeURIComponent(`${nome},casa,cozinha,decoração`)}`;
+  `https://picsum.photos/seed/${encodeURIComponent(nome)}/800/600`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
