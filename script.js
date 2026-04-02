@@ -5,6 +5,8 @@ const fecharModal = document.getElementById('fechar-modal');
 const resumoDoacao = document.getElementById('resumo-doacao');
 const produtosContainer = document.getElementById('produtos');
 const abas = document.querySelectorAll('.aba');
+const contadorTotal = document.getElementById('contador-total');
+const listaEscolhidos = document.getElementById('lista-escolhidos');
 
 const catalogo = {
   'Eletroportáteis': [
@@ -46,11 +48,40 @@ const catalogo = {
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
-const cardImage = (nome) => `https://placehold.co/800x600/fdf1f6/c74b75?text=${encodeURIComponent(nome)}`;
+const cardImage = (nome) =>
+  `https://source.unsplash.com/800x600/?${encodeURIComponent(`${nome},casa,cozinha,decoração`)}`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
 let categoriaAtual = 'Eletroportáteis';
+const presentesConfirmados = {};
+let totalEscolhas = 0;
+
+function renderizarContabilizador() {
+  contadorTotal.textContent = `Total de escolhas: ${totalEscolhas}`;
+  listaEscolhidos.innerHTML = '';
+
+  Object.entries(presentesConfirmados)
+    .sort(([, infoA], [, infoB]) => infoB.quantidade - infoA.quantidade)
+    .forEach(([nomePresente, info]) => {
+      const detalhes = info.confirmacoes
+        .map(({ nomeConvidado, valor }) => `${nomeConvidado} (${valor})`)
+        .join(' • ');
+      const item = document.createElement('li');
+      item.textContent = `${nomePresente} — ${info.quantidade} escolha${info.quantidade > 1 ? 's' : ''} | Confirmado por: ${detalhes}`;
+      listaEscolhidos.appendChild(item);
+    });
+}
+
+function fecharModalPix() {
+  modal.classList.remove('ativo');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function abrirModalPix() {
+  modal.classList.add('ativo');
+  modal.setAttribute('aria-hidden', 'false');
+}
 
 function montarCards() {
   produtosContainer.innerHTML = '';
@@ -116,27 +147,37 @@ form.addEventListener('submit', (event) => {
   }
 
   resumoDoacao.textContent = `${nome}, obrigado por presentear com ${presenteSelecionado} no valor de ${valorSelecionado}`;
-  modal.classList.add('ativo');
-  modal.setAttribute('aria-hidden', 'false');
+  abrirModalPix();
+
+  if (!presentesConfirmados[presenteSelecionado]) {
+    presentesConfirmados[presenteSelecionado] = {
+      quantidade: 0,
+      confirmacoes: []
+    };
+  }
+
+  presentesConfirmados[presenteSelecionado].quantidade += 1;
+  presentesConfirmados[presenteSelecionado].confirmacoes.push({
+    nomeConvidado: nome,
+    valor: valorSelecionado
+  });
+  totalEscolhas += 1;
+  renderizarContabilizador();
 });
 
-fecharModal.addEventListener('click', () => {
-  modal.classList.remove('ativo');
-  modal.setAttribute('aria-hidden', 'true');
-});
+fecharModal.addEventListener('click', fecharModalPix);
 
 modal.addEventListener('click', (event) => {
   if (event.target === modal) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && modal.classList.contains('ativo')) {
-    modal.classList.remove('ativo');
-    modal.setAttribute('aria-hidden', 'true');
+    fecharModalPix();
   }
 });
 
 montarCards();
+renderizarContabilizador();
