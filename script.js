@@ -67,6 +67,7 @@ function renderizarContabilizador() {
       const detalhes = info.confirmacoes
         .map(({ nomeConvidado, valor }) => `${nomeConvidado} (${valor})`)
         .join(' • ');
+
       const item = document.createElement('li');
       item.textContent = `${nomePresente} — ${info.quantidade} escolha${info.quantidade > 1 ? 's' : ''} | Confirmado por: ${detalhes}`;
       listaEscolhidos.appendChild(item);
@@ -161,6 +162,7 @@ form.addEventListener('submit', (event) => {
     nomeConvidado: nome,
     valor: valorSelecionado
   });
+
   totalEscolhas += 1;
   renderizarContabilizador();
 });
