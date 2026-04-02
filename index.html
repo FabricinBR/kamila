@@ -37,9 +37,33 @@
         <h2>Escolha seu presente</h2>
 
         <div class="abas" role="tablist" aria-label="Categorias de presentes">
-          <button class="aba ativa" type="button" role="tab" aria-selected="true" data-categoria="Eletroportáteis">Eletroportáteis</button>
-          <button class="aba" type="button" role="tab" aria-selected="false" data-categoria="Cozinha e mesa">Cozinha e mesa</button>
-          <button class="aba" type="button" role="tab" aria-selected="false" data-categoria="Cama e banho">Cama e banho</button>
+          <button
+            class="aba ativa"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-categoria="Eletroportáteis"
+          >
+            Eletroportáteis
+          </button>
+          <button
+            class="aba"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-categoria="Cozinha e mesa"
+          >
+            Cozinha e mesa
+          </button>
+          <button
+            class="aba"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-categoria="Cama e banho"
+          >
+            Cama e banho
+          </button>
         </div>
 
         <div class="produtos" id="produtos">
@@ -165,6 +189,12 @@
 
           <button type="submit">Confirmar presente</button>
         </form>
+
+        <section class="resumo-escolhas" aria-live="polite">
+          <h3>Presentes confirmados</h3>
+          <p id="contador-total">Total de escolhas: 0</p>
+          <ul id="lista-escolhidos"></ul>
+        </section>
       </section>
     </main>
 

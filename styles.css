@@ -47,7 +47,6 @@ body {
   background: #fff;
 }
 
-
 .mensagem-casal {
   margin: 0 auto 2rem;
   background: #fff;
@@ -64,7 +63,6 @@ body {
 .lista-presentes h2 {
   margin-bottom: 1rem;
 }
-
 
 .abas {
   display: flex;
@@ -112,7 +110,6 @@ body {
   background: var(--rosa-claro);
 }
 
-
 .produto img {
   width: 100%;
   height: 140px;
@@ -138,6 +135,35 @@ body {
   border: 1px solid var(--borda);
   display: grid;
   gap: 0.6rem;
+}
+
+.resumo-escolhas {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.resumo-escolhas h3 {
+  margin-bottom: 0.4rem;
+}
+
+#contador-total {
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+#lista-escolhidos {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+#lista-escolhidos li {
+  background: var(--rosa-claro);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
 }
 
 input,
