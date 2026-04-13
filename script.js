@@ -7,6 +7,7 @@ const produtosContainer = document.getElementById('produtos');
 const abas = document.querySelectorAll('.aba');
 const contadorTotal = document.getElementById('contador-total');
 const listaEscolhidos = document.getElementById('lista-escolhidos');
+const dadosPagamento = document.getElementById('dados-pagamento');
 
 const catalogo = {
   'Eletroportáteis': [
@@ -118,6 +119,7 @@ function montarCards() {
       presenteSelecionado = article.dataset.produto;
       valorSelecionado = article.dataset.valor;
       inputPresente.value = `${presenteSelecionado} - ${valorSelecionado}`;
+      dadosPagamento.classList.remove('oculto');
     });
 
     produtosContainer.appendChild(article);
@@ -137,6 +139,7 @@ abas.forEach((aba) => {
     presenteSelecionado = '';
     valorSelecionado = '';
     inputPresente.value = '';
+    dadosPagamento.classList.add('oculto');
     montarCards();
   });
 });
