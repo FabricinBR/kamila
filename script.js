@@ -55,6 +55,7 @@ const catalogo = {
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
 const cardImage = (nome) =>
   `https://picsum.photos/seed/${encodeURIComponent(nome)}/800/600`;
+const PRECO_FIXO = 'R$ 200,00';
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
@@ -92,17 +93,17 @@ function abrirModalPix() {
 function montarCards() {
   produtosContainer.innerHTML = '';
 
-  catalogo[categoriaAtual].forEach(([nome, valor]) => {
+  catalogo[categoriaAtual].forEach(([nome]) => {
     const article = document.createElement('article');
     article.className = 'produto';
     article.dataset.produto = nome;
-    article.dataset.valor = valor;
+    article.dataset.valor = PRECO_FIXO;
 
     article.innerHTML = `
       <img src="${cardImage(nome)}" alt="${nome}" loading="lazy" />
       <h3>${nome}</h3>
       <p>${categoriaAtual}</p>
-      <strong>${valor}</strong>
+      <strong>${PRECO_FIXO}</strong>
     `;
 
     const imagem = article.querySelector('img');
