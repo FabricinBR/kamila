@@ -137,6 +137,23 @@ body {
   gap: 0.6rem;
 }
 
+.dados-pagamento {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.dados-pagamento h3 {
+  margin-bottom: 0.5rem;
+}
+
+.oculto {
+  display: none;
+}
+
 .resumo-escolhas {
   margin-top: 1rem;
   background: #fff;
