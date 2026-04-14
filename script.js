@@ -41,6 +41,7 @@ const catalogo = {
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
+
 const imagensPorProduto = {
   Liquidificador:
     'https://drive.google.com/file/d/1geUf3tLHUdM74nhrQlanZqJb5C9_znog/view?usp=sharing',
@@ -92,15 +93,19 @@ function urlDriveParaImagem(url) {
 
   const matchById = url.match(/[?&]id=([^&]+)/);
   const matchByPath = url.match(/\/file\/d\/([^/]+)/);
-  const fileId = matchById?.[1] || matchByPath?.[1];
+  const fileId = (matchById && matchById[1]) || (matchByPath && matchByPath[1]);
 
   if (!fileId) return url;
   return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
 }
 
 const cardImage = (nome) => urlDriveParaImagem(imagensPorProduto[nome]) || imagemFallback;
+
 const formatarPreco = (valor) =>
-  `R$ ${Number(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `R$ ${Number(valor).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })}`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
