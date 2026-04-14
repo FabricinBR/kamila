@@ -14,7 +14,8 @@ const catalogo = {
     ['Liquidificador', 200],
     ['Cafeteira', 250],
     ['Micro-ondas', 600],
-    ['Air Fryer', 400]
+    ['Air Fryer', 400],
+    ['Aspirador', 500]
   ],
   'Cozinha e mesa': [
     ['Taças de vinho', 200],
@@ -70,7 +71,9 @@ const imagensPorProduto = {
   'Conjunto de jantar':
     'https://drive.google.com/file/d/1wQ5a8OA9eKi3XYo489QFU5vSOV0cmL8U/view?usp=sharing',
   'Faqueiro 91 peças':
-    'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/12UxlOPVrsuxkrujEzXR1oUXKbKLPsuwm/view?usp=sharing',
+  Aspirador:
+    'https://drive.google.com/file/d/1-1guUHo1G3ObSomOOhYEANNVlSIv8swC/view?usp=sharing',
   'Jogo de cama':
     'https://drive.google.com/file/d/144ABHpj2Ec96XahsLvj3a4k84wzbnFLG/view?usp=sharing',
   'Jogo de toalhas':
