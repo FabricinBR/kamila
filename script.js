@@ -41,51 +41,71 @@ const catalogo = {
 };
 
 const imagemFallback = 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80';
+
 const imagensPorProduto = {
   Liquidificador:
-    'https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1geUf3tLHUdM74nhrQlanZqJb5C9_znog/view?usp=sharing',
   Cafeteira:
-    'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1-bPc1b_F5_tQvw19WOol92hjjeiA3FRT/view?usp=sharing',
   'Micro-ondas':
-    'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1jdsgskSUrOZQSsREPpunLGXa2DZqEB5e/view?usp=sharing',
   'Air Fryer':
-    'https://images.unsplash.com/photo-1585515656973-3c2b3f978f29?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1WZPQPegaTCr5iKHJKh5JKPDs0_Cjqz1s/view?usp=sharing',
   'Taças de vinho':
-    'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1JqgDMPTeTE3fS6QB8FPKmkQQzAPgwxIx/view?usp=sharing',
   'Tábua de frios':
-    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1WfkVb-Rsym1ZAJo3BfI-XtrTby_yw_p7/view?usp=sharing',
   'Jogo americano':
-    'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1whUDHL92mub43Or82KpMAG3R8sAWNYt1/view?usp=sharing',
   Saleiro:
-    'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1NYFKKIto2Fzp5W09rkn3qJpsg9ZjkkH7/view?usp=sharing',
   'Utensílios inox dourado':
-    'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1N8REmjLAaEAp7igEgio6gbUDwhuJvN5M/view?usp=sharing',
   'Utensílios de cozinha':
-    'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1iuFIwKWxLEgoHMh4u8CrdglNjO-8Lub0/view?usp=sharing',
   Açucareiro:
-    'https://images.unsplash.com/photo-1587241321921-91a834d6d191?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1rzosNqkC_eK3RaG6KqGRWf1msWsfi3hp/view?usp=sharing',
   'Porta manteiga':
-    'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1nsfThvI1XK7eJ9X1rHyfHpRnKQWrxU6N/view?usp=sharing',
   'Conjunto de jantar':
-    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1wQ5a8OA9eKi3XYo489QFU5vSOV0cmL8U/view?usp=sharing',
   'Faqueiro 91 peças':
     'https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=800&q=80',
   'Jogo de cama':
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/144ABHpj2Ec96XahsLvj3a4k84wzbnFLG/view?usp=sharing',
   'Jogo de toalhas':
-    'https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1iF2TsrwX3YPoTiWyb5AOSnr5JY_eoIVJ/view?usp=sharing',
   'Passeio de barco':
-    'https://images.unsplash.com/photo-1562281302-809108fd533c?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1ZFCIGwA_2eXCuta8Xj8z5eZmlua6nnnm/view?usp=sharing',
   'Spa para casal':
-    'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1PKkbR91jPCtckJ0gSvKk2mPopFneGBwz/view?usp=sharing',
   Passagens:
-    'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1bQiBR7vVmz9wp2qAoe4pi1O-7DwwcKB5/view?usp=sharing',
   'Diária de hotel':
-    'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    'https://drive.google.com/file/d/1MIlAUL87_XsixaQc2UpdbNkoirb2Srcd/view?usp=sharing',
+  'Jantar romântico':
+    'https://drive.google.com/file/d/1csUpdoGuhddbX9vfU2xlfP_M2-MLOO_x/view?usp=sharing',
 };
-const cardImage = (nome) => imagensPorProduto[nome] || imagemFallback;
+
+function urlDriveParaImagem(url) {
+  if (!url || typeof url !== 'string') return '';
+  if (!url.includes('drive.google.com')) return url;
+
+  const matchById = url.match(/[?&]id=([^&]+)/);
+  const matchByPath = url.match(/\/file\/d\/([^/]+)/);
+  const fileId = (matchById && matchById[1]) || (matchByPath && matchByPath[1]);
+
+  if (!fileId) return url;
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
+}
+
+const cardImage = (nome) => urlDriveParaImagem(imagensPorProduto[nome]) || imagemFallback;
+
 const formatarPreco = (valor) =>
-  `R$ ${Number(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  `R$ ${Number(valor).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })}`;
 
 let presenteSelecionado = '';
 let valorSelecionado = '';
